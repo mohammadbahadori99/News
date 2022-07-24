@@ -1,8 +1,5 @@
 # Android Clean MVVM architecture
 
-<p align="center">
- <img src='https://user-images.githubusercontent.com/45559398/172485205-6fa4e496-4661-49ff-90f1-7bacf2ea529a.gif' width='300'>
-</p>
 
 Hi everyone. I'm Mohammad Bahadori a simple android developer. 🧍‍
 
@@ -10,7 +7,6 @@ This is a sample project. 😜
 
 Clean MVVM has become one of the standard architectures around which large Android projects are developed.
 
-If you want to see the xml version of this project, refer to this link --->  [Click here](https://github.com/javacl/xml-about-me)
 
 ### The basic flow looks like this 😎
 
