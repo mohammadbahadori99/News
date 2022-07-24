@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_about_me">Hello.\n\nI,m Mohammad Bahadori.\n\nAndroid Developer \n\nMy Birthday : 1996 April 15\n\nLive in Mashhad</string>
+    <string name="label_about_me">About Me</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="label_full_name">Mohammad Bahadori</string>
+    <string name="label_github">Github</string>
+    <string name="label_gitlab">Gitlab</string>
+    <string name="label_linkedin">Linkedin</string>
+    <string name="label_telegram">Telegram</string>
+    <string name="label_instagram">Instagram</string>
+    <string name="link_github">https://github.com/mohammadbahadori99</string>
+    <string name="link_gitlab">https://gitlab.com/mohammadbahadori99</string>
+    <string name="link_linkedin">https://www.linkedin.com/in/mohammad-bahadori/</string>
+    <string name="link_telegram">https://telegram.me/mohammadbahadori75</string>
+    <string name="link_instagram">http://instagram.com/_u/mohammad.bahadori75</string>
+
+</resources>

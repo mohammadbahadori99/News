@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="compose-about-me.android-core" target="11" />
+      <module name="compose-about-me.app" target="11" />
+      <module name="compose-about-me.data-article" target="11" />
+      <module name="compose-about-me.data-user" target="11" />
+      <module name="compose-about-me.domain-article" target="11" />
+      <module name="compose-about-me.domain-article.main" target="11" />
+      <module name="compose-about-me.domain-article.test" target="11" />
+      <module name="compose-about-me.domain-user" target="11" />
+      <module name="compose-about-me.domain-user.main" target="11" />
+      <module name="compose-about-me.domain-user.test" target="11" />
+      <module name="compose-about-me.ui-article" target="11" />
+      <module name="compose-about-me.ui-user" target="11" />
+      <module name="News.android-core" target="11" />
+      <module name="News.app" target="11" />
+      <module name="News.data-article" target="11" />
+      <module name="News.data-user" target="11" />
+      <module name="News.domain-article" target="11" />
+      <module name="News.domain-user" target="11" />
+      <module name="News.ui-article" target="11" />
+      <module name="News.ui-user" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
