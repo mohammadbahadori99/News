@@ -1,12 +1,9 @@
 # Android Clean MVVM architecture
 
 
-Hi everyone. I'm Mohammad Bahadori a simple android developer. 🧍‍
+Hi everyone. I'm Mohammad Bahadori an android developer.
 
-This is a sample project. 😜
-
-Clean MVVM has become one of the standard architectures around which large Android projects are developed.
-
+This is a sample project for practing compose and Clean MVVM.
 
 ### The basic flow looks like this 😎
 
