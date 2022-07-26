@@ -4,6 +4,7 @@ package com.example.core.api
 import com.example.core.ApiResult
 import com.example.core.Exceptions
 import com.example.core.model.AppError
+import com.mohammad.bahadori.base.models.Resource
 import org.json.JSONObject
 
 /**
@@ -11,14 +12,14 @@ import org.json.JSONObject
  * created based on the [errorMessage].
  */
 suspend fun <T : Any> safeApiCall(
-    call: suspend () -> ApiResult<T>,
+    call: suspend () -> Resource<T>,
     errorMessage: String
-): ApiResult<T> {
+): Resource<T> {
     return try {
         call()
     } catch (e: Exception) {
         // An exception was thrown when calling the API so we're converting this to an IOException
-        ApiResult.Error(Exceptions.IOException(errorMessage, e))
+        Resource.Error(Exception(errorMessage,e))
     }
 }
 

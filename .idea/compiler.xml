@@ -18,8 +18,12 @@
       <module name="News.app" target="11" />
       <module name="News.data-article" target="11" />
       <module name="News.data-user" target="11" />
-      <module name="News.domain-article" target="11" />
-      <module name="News.domain-user" target="11" />
+      <module name="News.domain-article" target="1.8" />
+      <module name="News.domain-article.main" target="1.8" />
+      <module name="News.domain-article.test" target="1.8" />
+      <module name="News.domain-user" target="1.8" />
+      <module name="News.domain-user.main" target="1.8" />
+      <module name="News.domain-user.test" target="1.8" />
       <module name="News.ui-article" target="11" />
       <module name="News.ui-user" target="11" />
     </bytecodeTargetLevel>

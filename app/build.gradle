@@ -83,6 +83,7 @@ dependencies {
     implementation(project(":data-article"))
     implementation(project(":domain-article"))
     implementation(project(":ui-article"))
+    implementation(project(":base"))
 
     implementation(project(":data-user"))
     implementation(project(":domain-user"))

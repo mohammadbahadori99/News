@@ -107,4 +107,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation(project(":domain-article"))
     implementation implementation(project(':android-core',))
+    implementation implementation(project(':base',))
 }

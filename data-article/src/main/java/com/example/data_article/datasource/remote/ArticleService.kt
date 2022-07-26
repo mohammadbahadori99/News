@@ -1,6 +1,7 @@
 package com.example.data_article.datasource.remote
 
 import com.example.data_article.model.ArticleListNetwork
+import com.mohammad.bahadori.base.models.Resource
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

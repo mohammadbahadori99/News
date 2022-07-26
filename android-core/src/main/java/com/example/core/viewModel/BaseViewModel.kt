@@ -6,6 +6,8 @@ import com.example.core.ApiResult
 import com.example.core.ExceptionHelper
 import com.example.core.Exceptions
 import com.example.core.R
+import com.mohammad.bahadori.base.models.Resource
+import com.mohammad.bahadori.base.models.getDataOrException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -61,7 +63,7 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     protected open suspend fun <T> observeNetworkState(
-        vararg results: ApiResult<T>,
+        vararg results: Resource<T>,
         requestTagList: List<String> = listOf()
     ) {
         var errorChecked = false
@@ -69,7 +71,7 @@ abstract class BaseViewModel : ViewModel() {
 
         results.forEachIndexed { index, result ->
 
-            if (result is ApiResult.Error && !errorChecked) {
+            if (result is Resource.Error && !errorChecked) {
                 val networkViewState = getNetworkStateResult(result)
                 emitNetworkViewState(networkViewState)
                 errorChecked = true
@@ -89,45 +91,54 @@ abstract class BaseViewModel : ViewModel() {
             )
     }
 
-    protected open suspend fun <T> observeNetworkState(result: ApiResult<T>, requestTag: String) {
+    protected open suspend fun <T> observeNetworkState(result: Resource<T>, requestTag: String) {
         emitNetworkViewState(getNetworkStateResult(result, requestTag))
     }
 
     private suspend fun <T> getNetworkStateResult(
-        result: ApiResult<T>,
+        result: Resource<T>,
         requestTag: String? = null
     ): NetworkViewState {
         return when (result) {
-            is ApiResult.Success -> {
+            is Resource.Success -> {
                 NetworkViewState(
                     showSuccess = true,
                     data = castData(result, requestTag),
                     requestTag = requestTag
                 )
             }
-            is ApiResult.Error -> {
-                if (result.exception is Exceptions.ValidationException<*>) {
-                    NetworkViewState(
-                        showValidationError = true,
-                        validationError = result.exception.errors,
-                        requestTag = requestTag
-                    )
-                } else {
-                    val errorView = ExceptionHelper.getError(result.exception)
-                    NetworkViewState(
-                        showError = true,
-                        serverErrorMessage = errorView.serverErrorMessage,
-                        errorMessage = errorView.message,
-                        unauthorized = errorView.unauthorized,
-                        errorIcon = errorView.icon,
-                        requestTag = requestTag
-                    )
-                }
+            is Resource.Error -> {
+                NetworkViewState(
+                    showError = true,
+                    serverErrorMessage = result.error.localizedMessage,
+                    errorMessage = R.string.error_general,
+                    unauthorized = false,
+                    errorIcon = R.drawable.ic_general_error,
+                    requestTag = requestTag
+                )
+            }
+            is Resource.Loading -> {
+                NetworkViewState(
+                    showProgressMore = true,
+                    requestTag = requestTag
+                )
+            }
+            is Resource.Canceled -> {
+                NetworkViewState(
+                    showProgressMore = false,
+                    requestTag = requestTag
+                )
+            }
+            else -> {
+                NetworkViewState(
+                    showProgressMore = false,
+                    requestTag = requestTag
+                )
             }
         }
     }
 
-    protected open suspend fun <T> castData(result: ApiResult<T>, requestTag: String?): Any? {
-        return (result as ApiResult.Success).data
+    protected open suspend fun <T> castData(result: Resource<T>, requestTag: String?): Any? {
+        return (result as Resource.Success).data
     }
 }

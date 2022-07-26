@@ -1,7 +1,7 @@
 package com.example.domain_article.repository
 
-import com.example.core.ApiResult
 import com.example.domain_article.model.ArticleEntity
+import com.mohammad.bahadori.base.models.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface ArticleRepository {
@@ -9,5 +9,5 @@ interface ArticleRepository {
 
     fun getArticleLocal(articleId: Int): Flow<ArticleEntity?>
 
-    suspend fun getArticleListRemote(page: Int): ApiResult<Unit>
+    suspend fun getArticleListRemote(page: Int): Resource<Unit>
 }

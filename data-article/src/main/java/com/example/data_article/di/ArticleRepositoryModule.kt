@@ -16,5 +16,4 @@ interface ArticleRepositoryModule {
     @Singleton
     fun provideArticleRepository(articleRepositoryImpl: ArticleRepositoryImpl): ArticleRepository
 
-
 }
